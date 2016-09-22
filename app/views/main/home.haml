@@ -1,2 +1,4 @@
-%h1 Bienvenido a la pagina
-%p1 probando haml
+%h1 Bienvenido a InstaNote
+
+-if user_signed_in?
+	=link_to "Cerrar sesión" , destroy_user_session_path, method: :delete
