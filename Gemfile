@@ -30,8 +30,14 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'shoulda-matchers'
+  gem 'rspec-rails',"~> 3.5.0.beta1"
+  gem 'factory_girl_rails',"~> 4.0"
   gem 'byebug', platform: :mri
 end
 
@@ -52,3 +58,5 @@ gem 'haml-rails'
 
 gem 'devise', github: "plataformatec/devise"
 gem 'omniauth-facebook'
+
+gem 'bootstrap-sass', '~> 3.3.6'
