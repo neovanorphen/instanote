@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,:omniauthable, :omniauth_providers => [:facebook]
 
 
-  validates :username, presence: true , uniqueness: true , length: {in : 3..12}
+  validates :username, presence: true , uniqueness: true, length: { in: 3..12 }
+  validate :validate_username_regex
 
 
   def self.from_omniauth(auth)
@@ -18,5 +19,13 @@ class User < ApplicationRecord
   		user.password = Devise.friendly_token[0,20]
   	end
   end
+
+
+  private
+    def validate_username_regex
+      unless username =~ /\A[a-zA-Z]*[a-zA-Z][a-zA-Z0-9_]*\Z/
+        errors.add(:username, "El username debe iniciar con una letra y solo debe tener letras y numeros")
+      end
+    end
 
 end
