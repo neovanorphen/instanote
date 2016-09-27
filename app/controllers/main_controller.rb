@@ -1,6 +1,8 @@
 class MainController < ApplicationController
   
   def home
+    @posts = Post.all
+    @post  s= Post.new
   end
 
   def unregistered
