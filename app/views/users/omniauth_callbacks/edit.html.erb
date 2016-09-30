@@ -2,17 +2,18 @@
 	<ul>
 		<%= @user.errors.full_messages.each do |error| %>
 			<li><%= error %> </li>
+			<% end %>
 	</ul> 
 	<div>
-		<%=label{for:"user_username"} Nombre de Usuario %>
+		Nombre de Usuario 
 		<%=text_field_tag "user[username]",@user.username %>
 	</div>
 	<div>
-		<%=label{for:"user_email"} Email %>
+		Email 
 		<%=email_field_tag "user[email]",@user.email %>
 	</div>
 	<div>
-		<%=label{for:"user_name"} Nombre %>
+		Nombre 
 		<%=text_field_tag "user[name]",@user.name %>
 	</div>
 	<div>

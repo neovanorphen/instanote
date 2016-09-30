@@ -62,3 +62,5 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'annotate'
 
 gem 'best_in_place', '~> 3.0.1'
+
+gem "paperclip", "~> 5.0.0"
